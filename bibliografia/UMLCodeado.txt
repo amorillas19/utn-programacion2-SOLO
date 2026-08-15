@@ -1,0 +1,75 @@
+@startuml
+interface Calculable {
+  +calcularTotal(): void
+}
+
+abstract class Base {
+  -id: Long
+  -eliminado: boolean
+  -createdAt: LocalDateTime
+}
+
+class Usuario extends Base {
+  -nombre: String
+  -apellido: String
+  -mail: String
+  -celular: String
+  -contraseña: String
+  -rol: Rol
+}
+
+class Pedido extends Base implements Calculable {
+  -fecha: LocalDate
+  -estado: Estado
+  -total: Double
+  -formaPago: FormaPago
+  +addDetallePedido(int, Double, Producto): void
+  +findDetallePedidoByProduct(Producto): DetallePedido
+  +deleteDetallePedidoByProduct(Producto): void
+}
+
+class DetallePedido extends Base{
+  -cantidad: int
+  -subtotal: Double
+}
+
+class Categoria extends Base {
+  -nombre: String
+  -descripcion: String
+}
+
+class Producto extends Base {
+  -nombre: String
+  -precio: Double
+  -descripcion: String
+  -stock: int
+  -imagen: String
+  -disponible: Boolean
+}
+
+enum FormaPago {
+  TARJETA
+  TRANSFERENCIA
+  EFECTIVO
+}
+
+enum Rol {
+  ADMIN
+  USUARIO
+}
+
+enum Estado {
+  PENDIENTE
+  CONFIRMADO
+  TERMINADO
+  CANCELADO
+}
+
+Usuario "1" --> "1..m" Pedido
+Pedido "1" *-- "1..m" DetallePedido
+DetallePedido "m" --> "1" Producto
+Categoria "1" o-- "1..m" Producto
+Pedido --> FormaPago
+Pedido --> Estado
+Usuario --> Rol
+@enduml
