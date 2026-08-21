@@ -1,8 +1,5 @@
-package entities;
+package main.java.com.foodstore.entities;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class DetallePedido extends Base{
     private int cantidad;

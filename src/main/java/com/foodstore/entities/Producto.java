@@ -1,4 +1,4 @@
-package entities;
+package main.java.com.foodstore.entities;
 
 public class Producto extends Base {
     private String nombre;

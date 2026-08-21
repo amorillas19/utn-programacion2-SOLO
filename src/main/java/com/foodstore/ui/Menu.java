@@ -1,4 +1,4 @@
-package ui;
+package main.java.com.foodstore.ui;
 
 import java.util.Scanner;
 

@@ -1,6 +1,6 @@
-import entities.*;
-import enums.*;
-import ui.*;
+package main.java.com.foodstore;
+
+import main.java.com.foodstore.entities.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {

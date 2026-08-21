@@ -1,10 +1,10 @@
-package entities;
+package main.java.com.foodstore.entities;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import enums.*;
+import main.java.com.foodstore.enums.*;
 
 public class Pedido extends Base implements Calculable {
     private LocalDate fecha;
@@ -13,6 +13,8 @@ public class Pedido extends Base implements Calculable {
     private FormaPago formaPago;
     private Usuario usuario;
     private List<DetallePedido> listaDetallesPedidos;
+
+    /* OJO QUE LA LOGICA DE USUARIO ESTA PENDIENTE */
 
     public Pedido() {
     }

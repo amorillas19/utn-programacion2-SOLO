@@ -1,9 +1,9 @@
-package entities;
+package main.java.com.foodstore.entities;
 
 import java.util.Collections;
 import java.util.List;
 
-import enums.Rol;
+import main.java.com.foodstore.enums.Rol;
 
 public class Usuario extends Base{
     private String nombre;
